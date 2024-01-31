@@ -5,19 +5,7 @@ function App() {
   const [show, setShow] = useState("");
   const [currentText, setCurrentText] = useState(0);
 
-  useEffect(() => {
-    let para = texts[currentText].para.split("");
-    let temp = "";
-    const interval = setInterval(() => {
-      temp = temp + para.shift();
-      setShow(temp);
-      if (para.length === 0) {
-        clearInterval(interval);
-      }
-    }, 100);
 
-    return () => clearInterval(interval);
-  }, [currentText]);
   const texts = [
     { para: `Hi,My girl! I am here to ask you something.`, button: [{ val: "ok", onClick: () => setCurrentText(1) }] },
     {
@@ -44,6 +32,23 @@ function App() {
       img:"./img/proposal.gif"
     },
   ];
+
+  useEffect(() => {
+    let para = texts[currentText].para.split("");
+    let temp = "";
+    const interval = setInterval(() => {
+      temp = temp + para.shift();
+      setShow(temp);
+      if (para.length === 0) {
+        clearInterval(interval);
+      }
+    }, 100);
+
+    return () => clearInterval(interval);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentText]);
+
+ 
   return (
     <div className="flex justify-center items-center h-screen w-screen app p-5">
       <div className="backdrop-custom w-5/6 h-5/6 rounded-3xl flex justify-center items-center p-10">
