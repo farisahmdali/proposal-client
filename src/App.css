@@ -7,3 +7,9 @@
   backdrop-filter: blur(5px) ;
 }
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: 5px; /* Optional: You can adjust the margin if needed */
+}
