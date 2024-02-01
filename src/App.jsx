@@ -47,39 +47,39 @@ function App() {
     },
     {
       para: `Thank u my love 🥹.Love u my sweetheart.`,
-      button: [{ val: "Love u too", onClick: () => setCurrentText(9) }],
+      button: [{ val: "Love u too", onClick: () => window.location.href = "https://instagram.com/faris_ahemmed" }],
     },
-    {
-      para: `So can i have your whatsapp number.`,
-      button: [
-        {
-          val: "Here You Go",
-          onClick: async () => {
-            try {
-              setCurrentText(10);
-              const docRef = await addDoc(collection(db, "users"), {
-                data
-              });
-              console.log("Document written with ID: ", docRef.id);
-            } catch (e) {
-              console.error("Error adding document: ", e);
-            }
-          },
-        },
-      ],
-      input: [{ name: "whatsappNumber", placeholder: "", type: "tel" }],
-    },
-    {
-      para: `Here is my number 9526444434.`,
-      button: [
-        {
-          val: "See You Later",
-          onClick: () => {
-            window.location.href = "https://instagram.com";
-          },
-        },
-      ],
-    },
+    // {
+    //   para: `So can i have your whatsapp number.`,
+    //   button: [
+    //     {
+    //       val: "Here You Go",
+    //       onClick: async () => {
+    //         try {
+    //           setCurrentText(10);
+    //           const docRef = await addDoc(collection(db, "users"), {
+    //             data
+    //           });
+    //           console.log("Document written with ID: ", docRef.id);
+    //         } catch (e) {
+    //           console.error("Error adding document: ", e);
+    //         }
+    //       },
+    //     },
+    //   ],
+    //   input: [{ name: "whatsappNumber", placeholder: "", type: "tel" }],
+    // },
+    // {
+    //   para: `Here is my number 9526444434.`,
+    //   button: [
+    //     {
+    //       val: "See You Later",
+    //       onClick: () => {
+    //         window.location.href = "https://instagram.com";
+    //       },
+    //     },
+    //   ],
+    // },
   ];
 
   useEffect(() => {
